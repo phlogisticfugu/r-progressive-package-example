@@ -1,0 +1,16 @@
+
+test_that("is_string_with_content works", {
+  expect_true(locallib::is_string_with_content("foobar"))
+  expect_false(locallib::is_string_with_content(""))
+  expect_false(locallib::is_string_with_content(NA))
+  expect_false(locallib::is_string_with_content(NULL))
+  expect_false(locallib::is_string_with_content(character(0)))
+  expect_false(locallib::is_string_with_content(logical(0)))
+  expect_false(locallib::is_string_with_content(123))
+  expect_false(locallib::is_string_with_content(c("a", "b")))
+  expect_false(locallib::is_string_with_content(list("a", c(TRUE, FALSE))))
+  expect_false(locallib::is_string_with_content(matrix(1:6, ncol = 3, nrow = 2)))
+  expect_false(locallib::is_string_with_content(array(1:12, c(2, 3, 2))))
+  expect_false(locallib::is_string_with_content(data.frame(x = 1:3, y = c("a", "b", "c"))))
+  expect_false(locallib::is_string_with_content(c(NA, "foo")[1]))
+})
