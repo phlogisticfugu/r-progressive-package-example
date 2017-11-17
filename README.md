@@ -38,5 +38,8 @@ And that one should set the working directing of RStudio to the same folder as t
 ``
 R/bootstrap.R
 ``
-Is part of what makes this all work
+Is part of what makes this all work.  It can also be used to define other global settings.
+```R
+devtools::install(file.path(RPROJROOT, "R", "locallib"), quick=TRUE)
+```
 
